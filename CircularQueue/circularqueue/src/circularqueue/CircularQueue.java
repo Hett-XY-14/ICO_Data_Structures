@@ -16,6 +16,8 @@ public class CircularQueue {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        int size = 10;
+        Controller app = new Controller(size);
     }
-    Controller App = new Controller();
+    
 }

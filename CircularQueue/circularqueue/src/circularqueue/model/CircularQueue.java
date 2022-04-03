@@ -31,12 +31,12 @@ public class CircularQueue {
     }
     
     // Methods:
-    public void enqueue(/*parameter*/) {
+    public void enQueue(/*parameter*/) {
     // This method should accept an int number and store it in the innerArray position pointed by nextPositionPointer 
     // Don't forget to move nextPositionPointer to the next position, make use of the modulo operation to return to 0 once the las element of the array has been reached
     }
   
-    public int deque() {
+    public int deQueue() {
     // This method should return the oldest element in the queue (the first one)
     // Don't forget to move firstPositionPointer to the next position, make use of the modulo operation to return to 0 once the las element of the array has been reached
     return 0;
@@ -50,6 +50,11 @@ public class CircularQueue {
     public boolean isFull() {
     // This method should return true if the queue is full, false otherwise
         return false;
+    }
+    
+    public int[] getInnerArray() {
+    // This method should return the innerArray attribute
+        return null;
     }
 }
 
