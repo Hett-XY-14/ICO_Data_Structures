@@ -4,6 +4,7 @@
  */
 package sparsematrix.view;
 
+import java.awt.Color;
 import javax.swing.JPanel;
 
 /**
@@ -24,6 +25,8 @@ public final class NorthPanel extends JPanel{
     }
     
     public void initComponents() {
+        this.setOpaque(true);
+        this.setBackground(new Color(160,160,160));
         this.add(this.clock);
         this.add(this.title);
         this.add(this.date);

@@ -33,8 +33,9 @@ public class ClockPanel extends JPanel implements ActionListener{
         timeFormat = new SimpleDateFormat(" HH : mm : ss ");
         this.timeLabel = new JLabel();
        
-        timeLabel.setFont(new Font("SansSerif", Font.PLAIN, 25));
-        timeLabel.setForeground(new Color(0x505050));
+        timeLabel.setFont(new Font("SansSerif", Font.PLAIN, 20));
+        timeLabel.setForeground(new Color(0x000000));
+        this.setOpaque(false);
         this.add(timeLabel);
         //this.setBackground(Color.black);
         

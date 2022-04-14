@@ -30,8 +30,9 @@ public class DatePanel extends JPanel implements ActionListener{
         this.dateFormat = new SimpleDateFormat("dd / MMM / Y");
         this.dateLabel = new JLabel ();
         setDate();
-        this.dateLabel.setFont(new Font("SansSerif", Font.PLAIN, 25));
-        this.dateLabel.setForeground(new Color(0x505050));
+        this.dateLabel.setFont(new Font("SansSerif", Font.PLAIN, 20));
+        this.dateLabel.setForeground(new Color(0x000000));
+        this.setOpaque(false);      
         //this.setBackground(Color.BLACK);
         this.add(dateLabel);
         this.hourChange = new Timer(3600000,this);

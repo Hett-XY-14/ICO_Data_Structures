@@ -45,8 +45,29 @@ public class Model {
                 }
             }
         }
+        showCompactMatrix(numberOfElements);
         
-        System.out.println(Arrays.toString(compactMatrix));
+    }
+    
+    public void showCompactMatrix(int n) {
+        
+        for (int i=0; i<3; i+=1) {
+            switch(i) {
+                case 0:
+                    System.out.print("Value: ");
+                    break;
+                case 1:
+                    System.out.print("Row:   ");
+                    break;
+                case 2:
+                    System.out.print("Column: ");
+                    break;
+            }
+            for (int j=0; j<n; j+=1) {
+                System.out.print("[" + compactMatrix[i][j] + "]");
+            }
+            System.out.println("");
+        }
     }
     
     public int[][] reconstructMatrix() {
