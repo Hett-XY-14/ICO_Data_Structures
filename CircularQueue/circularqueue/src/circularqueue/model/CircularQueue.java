@@ -34,6 +34,7 @@ public class CircularQueue {
     public void enQueue(/*parameter*/) {
     // This method should accept an int number and store it in the innerArray position pointed by nextPositionPointer 
     // Don't forget to move nextPositionPointer to the next position, make use of the modulo operation to return to 0 once the las element of the array has been reached
+        System.out.println("alskdfjslñakdjflsakjdflsakjlkjsalkjdfl");
     }
   
     public int deQueue() {
