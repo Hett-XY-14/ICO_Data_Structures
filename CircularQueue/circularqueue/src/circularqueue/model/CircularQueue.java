@@ -27,7 +27,7 @@ public class CircularQueue {
     // write the class constructor, it should accept an int parameter "n" as argument and using it to set the length of innerArray
     // initialize the innerArray as a new int array of length "n"
     // initialize the pointers, pointing at the same position (empty array)
-    
+        System.out.println("xddxdxd");
     }
     
     // Methods:
