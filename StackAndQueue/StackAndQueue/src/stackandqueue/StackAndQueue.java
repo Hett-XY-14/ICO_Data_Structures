@@ -4,6 +4,8 @@
  */
 package stackandqueue;
 
+import stackandqueue.controller.Controller;
+
 /**
  *
  * @author Hoeco
@@ -14,7 +16,7 @@ public class StackAndQueue {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Controller app = new Controller();
     }
     
 }
