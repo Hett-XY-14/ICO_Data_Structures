@@ -8,6 +8,7 @@ import java.awt.Color;
 import java.awt.Font;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
 /**
@@ -19,11 +20,16 @@ public class TitlePanel extends JPanel{
     
     public TitlePanel (String titleWord) {
         this.title = new JLabel(titleWord);
-        title.setFont(new Font("SansSerif", Font.PLAIN,25));
-        title.setForeground(Color.black);
+        this.title.setHorizontalAlignment(SwingConstants.CENTER);
+        this.title.setFont(new Font(Font.MONOSPACED, Font.PLAIN, 24));
+        this.title.setForeground(Color.WHITE);
         this.setBorder(new EmptyBorder(1,15,1,15));
         this.setOpaque(false);  
         this.add(title
         );
+    }
+    
+    public void setLetterColor(Color color) {
+        this.title.setForeground(color);
     }
 }

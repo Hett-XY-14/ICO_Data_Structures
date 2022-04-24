@@ -4,8 +4,14 @@
  */
 package stackandqueue.view.centralpanelcomponents;
 
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.util.Objects;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.SwingConstants;
+import javax.swing.border.EmptyBorder;
 
 /**
  *
@@ -23,10 +29,33 @@ public class SequencePanel extends JPanel{
         
     }
     
-    public SequencePanel(Object[] items){
-        this.sequence = new JLabel[items.length];
-        for(int i=0; i<items.length; i+=1){
-            this.sequence[i] = new JLabel(String.valueOf(items[i]));
+    public SequencePanel(Object[] sequenceItems){
+        this.sequence = new JLabel[sequenceItems.length];
+        
+        for(int i=0; i<sequenceItems.length; i+=1){
+            if(!Objects.isNull(sequenceItems[i])) {
+                this.sequence[i] = new JLabel(String.valueOf(sequenceItems[i]));
+                this.sequence[i].setHorizontalAlignment(SwingConstants.CENTER);
+                //this.sequence[i].setBorder(new EmptyBorder(10,10,10,10));
+                this.sequence[i].setFont(new Font(Font.MONOSPACED, Font.PLAIN, 20));
+                this.sequence[i].setForeground(Color.WHITE);
+                this.sequence[i].setOpaque(true);
+                this.sequence[i].setBackground(new Color(0,32,28));
+                this.sequence[i].setPreferredSize(new Dimension(26,45));
+                System.out.println("alsdkifjhsakljfdlsk");
+            } else {
+                this.sequence[i] = new JLabel(" ");
+                this.sequence[i].setHorizontalAlignment(SwingConstants.CENTER);                
+                //this.sequence[i].setBorder(new EmptyBorder(10,10,10,10));
+                this.sequence[i].setFont(new Font(Font.MONOSPACED, Font.PLAIN, 20));
+                this.sequence[i].setForeground(Color.WHITE);
+                this.sequence[i].setOpaque(true);
+                this.sequence[i].setBackground(new Color(190,190,190));
+                this.sequence[i].setPreferredSize(new Dimension(26,45));
+                System.out.println("else");
+            }
+            
+            //this.setBackground(new Color(215,215,215));
             this.add(this.sequence[i]);
         }
     }
@@ -39,11 +68,6 @@ public class SequencePanel extends JPanel{
         this.removeAll();
         this.sequence = new JLabel[sequenceItems.length];
         
-        for(int i=0; i<sequenceItems.length; i+=1){
-            this.sequence[i] = new JLabel(String.valueOf(sequenceItems[i]));
-            this.add(this.sequence[i]);
-        }
-        this.repaint();
     }
     
     

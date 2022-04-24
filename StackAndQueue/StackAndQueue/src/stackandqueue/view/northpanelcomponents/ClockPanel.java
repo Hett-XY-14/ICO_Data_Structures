@@ -15,7 +15,9 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.SwingConstants;
 import javax.swing.Timer;
+import javax.swing.border.EmptyBorder;
 
 /**
  *
@@ -33,8 +35,9 @@ public class ClockPanel extends JPanel implements ActionListener{
         timeFormat = new SimpleDateFormat(" HH : mm : ss ");
         this.timeLabel = new JLabel();
        
-        timeLabel.setFont(new Font("SansSerif", Font.PLAIN, 20));
-        timeLabel.setForeground(new Color(0x000000));
+        this.timeLabel.setHorizontalAlignment(SwingConstants.LEFT);
+        this.timeLabel.setFont(new Font(Font.MONOSPACED, Font.PLAIN, 18));
+        this.timeLabel.setForeground(Color.WHITE);
         this.setOpaque(false);
         this.add(timeLabel);
         //this.setBackground(Color.black);
@@ -44,6 +47,10 @@ public class ClockPanel extends JPanel implements ActionListener{
         
     }
 
+    public void setLetterColor(Color color) {
+        this.timeLabel.setForeground(color);
+    }
+    
     @Override
     public void actionPerformed(ActionEvent e) {
         time = timeFormat.format(Calendar.getInstance().getTime());

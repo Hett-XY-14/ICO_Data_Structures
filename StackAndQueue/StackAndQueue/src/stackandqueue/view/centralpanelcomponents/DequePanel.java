@@ -4,6 +4,9 @@
  */
 package stackandqueue.view.centralpanelcomponents;
 
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.TextField;
@@ -11,6 +14,8 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import javax.swing.SwingConstants;
+import javax.swing.border.EmptyBorder;
 
 /**
  *
@@ -42,9 +47,9 @@ public class DequePanel extends JPanel{
     public void initComponents() {
         this.setLayout(new GridBagLayout());
         this.GBCTitle = new GridBagConstraints();
-        this.GBCTitle.gridx=1;
+        this.GBCTitle.gridx=0;
         this.GBCTitle.gridy=0;
-        this.GBCTitle.gridwidth=2;
+        this.GBCTitle.gridwidth=4;
         this.GBCTitle.gridheight=1;
         this.GBCTitle.fill = GridBagConstraints.BOTH;
         this.GBCTitle.ipadx=0;
@@ -96,8 +101,41 @@ public class DequePanel extends JPanel{
         this.GBCRemoveButton.anchor = GridBagConstraints.CENTER;
         this.add(this.dequeueButton, this.GBCRemoveButton);
         
+        //this.setBackground(new Color(210,210,210));
+        setUILook();
     }
 
+    public void setUILook(){
+        
+        this.title.setHorizontalAlignment(SwingConstants.CENTER);
+        this.title.setBorder(new EmptyBorder(20,100,20,100));
+        this.title.setFont(new Font(Font.MONOSPACED, Font.PLAIN, 23));
+        this.title.setForeground(Color.WHITE);
+        this.title.setOpaque(true);
+        this.title.setBackground(new Color(0,32,28));
+        this.title.setPreferredSize(new Dimension(300,40));
+        
+        this.sequence.setPreferredSize(new Dimension(300,60));
+        this.sequence.setBackground(new Color(210,210,210));
+        
+        this.userInput.setPreferredSize(new Dimension(100,30));
+        
+        this.enqueueButton.setBorder(null);
+        this.enqueueButton.setBackground(new Color(76,121,121));
+        this.enqueueButton.setPreferredSize(new Dimension(120,30));
+        this.enqueueButton.setHorizontalAlignment(SwingConstants.CENTER);
+        this.enqueueButton.setBorder(new EmptyBorder(5,5,5,5));
+        this.enqueueButton.setFont(new Font(Font.MONOSPACED, Font.PLAIN, 20));
+        this.enqueueButton.setForeground(Color.BLACK);
+        
+        this.dequeueButton.setBorder(null);
+        this.dequeueButton.setBackground(new Color(144,102,78));
+        this.dequeueButton.setPreferredSize(new Dimension(120,30));
+        this.dequeueButton.setHorizontalAlignment(SwingConstants.CENTER);
+        this.dequeueButton.setBorder(new EmptyBorder(5,5,5,5));
+        this.dequeueButton.setFont(new Font(Font.MONOSPACED, Font.PLAIN, 20));
+        this.dequeueButton.setForeground(Color.BLACK);
+    }
     // Getters and Setters
     public JLabel getTitle() {
         return title;
@@ -115,6 +153,7 @@ public class DequePanel extends JPanel{
         this.remove(this.sequence);
         this.sequence = new SequencePanel(sequence);
         this.add(this.sequence, this.GBCSequence);
+        this.userInput.setText("");
         this.repaint();
     }
 

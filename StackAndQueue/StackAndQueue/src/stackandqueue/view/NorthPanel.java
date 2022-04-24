@@ -4,6 +4,7 @@
  */
 package stackandqueue.view;
 
+import java.awt.Color;
 import javax.swing.JPanel;
 import stackandqueue.view.northpanelcomponents.ClockPanel;
 import stackandqueue.view.northpanelcomponents.DatePanel;
@@ -27,6 +28,14 @@ public final class NorthPanel extends JPanel{
     }
     
     public void initComponents() {
+        Color whiteLetters = new Color(230,230,230);
+        Color deepGreen = new Color(0,32,28);
+        
+        this.setBackground(deepGreen);
+        this.clock.setLetterColor(whiteLetters);
+        this.title.setLetterColor(whiteLetters);
+        this.date.setLetterColor(whiteLetters);
+        
         this.add(clock);
         this.add(title);
         this.add(date);

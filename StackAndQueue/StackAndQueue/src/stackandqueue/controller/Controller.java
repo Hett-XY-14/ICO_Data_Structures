@@ -30,6 +30,7 @@ public class Controller implements ActionListener{
     
     public void start(){
         this.userInterface.setActionListener(this);
+        
     }
 
     @Override
