@@ -5,6 +5,7 @@
 package sparsematrix.view;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
@@ -37,6 +38,8 @@ public class View extends JFrame {
         this.add(BorderLayout.SOUTH, this.southPanel);
         this.add(BorderLayout.EAST, this.eastPanel);
         this.add(BorderLayout.WEST, this.westPanel);
+        
+        this.setBackground(new Color(250,250,250));
         
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setSize(600,600);
