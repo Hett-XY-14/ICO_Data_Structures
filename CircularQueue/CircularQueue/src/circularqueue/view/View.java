@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package circularqueue.view;
+package stackandqueue.view;
 
 import java.awt.BorderLayout;
 import java.awt.event.ActionListener;
@@ -21,7 +21,7 @@ public class View extends JFrame{
     private VoidPanel westPanel;
     
     public View() {
-        this.northPanel = new NorthPanel("Circular Queue");
+        this.northPanel = new NorthPanel("Stack and Queue");
         this.centralPanel = new CentralPanel();
         this.southPanel = new VoidPanel();
         this.eastPanel = new VoidPanel();
@@ -38,7 +38,7 @@ public class View extends JFrame{
         this.add(this.westPanel, BorderLayout.WEST);
     
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setSize(700,400);
+        this.setSize(650,600);
         this.setLocationRelativeTo(null);
         this.setVisible(true);
         
@@ -48,17 +48,19 @@ public class View extends JFrame{
         // Buttons in queuePanel
         this.centralPanel.getQueuePanel().getEnqueueButton().addActionListener(aL);
         this.centralPanel.getQueuePanel().getDequeueButton().addActionListener(aL);
-        
+        // Buttons in stackPanel
+        this.centralPanel.getStackPanel().getEnqueueButton().addActionListener(aL);
+        this.centralPanel.getStackPanel().getDequeueButton().addActionListener(aL);
     }
 
-    public void actualizeCentralPanel(String state) {
-            this.centralPanel.showWarning(state);
+    public void actualizeCentralPanel(Object[] sequence, String type) {
+        if ("stack".equals(type)){
+            this.centralPanel.getStackPanel().setSequencePanel(sequence);
+        } else if ("queue".equals(type)) {
+            this.centralPanel.getQueuePanel().setSequencePanel(sequence);
+        }
     }
     
-    public void actualizeCentralPanel(Object[] sequence) {
-            this.centralPanel.setSequencePanel(sequence);
-    }
-
     // Getters and Setters
     public NorthPanel getNorthPanel() {
         return northPanel;

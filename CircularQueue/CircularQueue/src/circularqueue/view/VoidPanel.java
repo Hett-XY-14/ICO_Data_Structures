@@ -4,7 +4,6 @@
  */
 package circularqueue.view;
 
-import java.awt.Font;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
@@ -12,13 +11,8 @@ import javax.swing.JPanel;
  *
  * @author Hoeco
  */
-public class TitlePanel extends JPanel{
-    JLabel title;
-    
-    public TitlePanel (String titleWord) {
-        this.title = new JLabel(titleWord);
-        title.setFont(new Font("SansSerif", Font.PLAIN, 30));
-        this.add(title
-        );
+public class VoidPanel extends JPanel{
+    public VoidPanel() {
+        this.add(new JLabel(""));
     }
 }

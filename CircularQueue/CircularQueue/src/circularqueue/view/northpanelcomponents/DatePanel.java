@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package circularqueue.view;
+package circularqueue.view.northpanelcomponents;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -13,6 +13,7 @@ import java.util.Calendar;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.SwingConstants;
 import javax.swing.Timer;
 
 /**
@@ -30,8 +31,10 @@ public class DatePanel extends JPanel implements ActionListener{
         this.dateFormat = new SimpleDateFormat("dd / MMM / Y");
         this.dateLabel = new JLabel ();
         setDate();
-        this.dateLabel.setFont(new Font("SansSerif", Font.PLAIN, 25));
-        this.dateLabel.setForeground(new Color(0x505050));
+        this.dateLabel.setHorizontalAlignment(SwingConstants.RIGHT);
+        this.dateLabel.setFont(new Font(Font.MONOSPACED, Font.PLAIN, 18));
+        this.dateLabel.setForeground(Color.WHITE);
+        this.setOpaque(false);      
         //this.setBackground(Color.BLACK);
         this.add(dateLabel);
         this.hourChange = new Timer(3600000,this);
@@ -46,5 +49,9 @@ public class DatePanel extends JPanel implements ActionListener{
     public void setDate() {
         date = dateFormat.format(Calendar.getInstance().getTime());
         dateLabel.setText(date);
+    }
+    
+    public void setLetterColor(Color color) {
+        this.dateLabel.setForeground(color);
     }
 }

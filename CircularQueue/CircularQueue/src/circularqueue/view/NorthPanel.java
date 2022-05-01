@@ -2,13 +2,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package circularqueue.view;
+package stackandqueue.view;
 
 import java.awt.Color;
 import javax.swing.JPanel;
-import circularqueue.view.northpanelcomponents.ClockPanel;
-import circularqueue.view.northpanelcomponents.DatePanel;
-import circularqueue.view.northpanelcomponents.TitlePanel;
+import stackandqueue.view.northpanelcomponents.ClockPanel;
+import stackandqueue.view.northpanelcomponents.DatePanel;
+import stackandqueue.view.northpanelcomponents.TitlePanel;
 
 /**
  *
@@ -30,10 +30,8 @@ public final class NorthPanel extends JPanel{
     public void initComponents() {
         Color whiteLetters = new Color(230,230,230);
         Color deepGreen = new Color(0,32,28);
-        Color deepGray = new Color(32,32,32);
         
-        
-        this.setBackground(deepGray);
+        this.setBackground(deepGreen);
         this.clock.setLetterColor(whiteLetters);
         this.title.setLetterColor(whiteLetters);
         this.date.setLetterColor(whiteLetters);

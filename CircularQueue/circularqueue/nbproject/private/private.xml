@@ -2,6 +2,15 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/D:/Hoeco/Documents/HHG/Universidad/ICO/2do%20Semestre/Data%20Structures/Projects/CircularQueue/CircularQueue/src/circularqueue/view/View.java</file>
+            <file>file:/D:/Hoeco/Documents/HHG/Universidad/ICO/2do%20Semestre/Data%20Structures/Projects/CircularQueue/CircularQueue/src/circularqueue/model/CircularQueue.java</file>
+            <file>file:/D:/Hoeco/Documents/HHG/Universidad/ICO/2do%20Semestre/Data%20Structures/Projects/CircularQueue/CircularQueue/src/circularqueue/view/northpanelcomponents/ClockPanel.java</file>
+            <file>file:/D:/Hoeco/Documents/HHG/Universidad/ICO/2do%20Semestre/Data%20Structures/Projects/CircularQueue/CircularQueue/src/circularqueue/controller/Controller.java</file>
+            <file>file:/D:/Hoeco/Documents/HHG/Universidad/ICO/2do%20Semestre/Data%20Structures/Projects/CircularQueue/CircularQueue/src/circularqueue/view/centralpanelcomponents/SequencePanel.java</file>
+            <file>file:/D:/Hoeco/Documents/HHG/Universidad/ICO/2do%20Semestre/Data%20Structures/Projects/CircularQueue/CircularQueue/src/circularqueue/view/NorthPanel.java</file>
+            <file>file:/D:/Hoeco/Documents/HHG/Universidad/ICO/2do%20Semestre/Data%20Structures/Projects/CircularQueue/CircularQueue/src/circularqueue/view/CentralPanel.java</file>
+            <file>file:/D:/Hoeco/Documents/HHG/Universidad/ICO/2do%20Semestre/Data%20Structures/Projects/CircularQueue/CircularQueue/src/circularqueue/view/centralpanelcomponents/DequePanel.java</file>
+        </group>
     </open-files>
 </project-private>

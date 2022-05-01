@@ -3,65 +3,74 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package circularqueue.controller;
-import circularqueue.model.CircularQueue;
-import circularqueue.view.View;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import circularqueue.model.CircularQueue;
+import circularqueue.view.View;
 /**
  *
  * @author Hoeco
+ * 
  */
 public class Controller implements ActionListener{
-
     private View userInterface;
     private CircularQueue circularQueue;
     
-    public Controller(int size) {
-        /*
-        this.userInterface = new View(size);
-        this.circularQueue = new CircularQueue(size);
-        initComponents();
-        */
+    
+    public Controller(int n) {
+        this.userInterface = new View();
+        this.circularQueue = new CircularQueue(n);
+        
+        start();
     }
     
-    public void initComponents() {
-        /*
-        this.userInterface.centralPanel.enQueueButton.addActionListener(this);
-        this.userInterface.centralPanel.deQueueButton.addActionListener(this);
-        */
+    public void start(){
+        this.userInterface.setActionListener(this);
         
     }
-    
+
     @Override
     public void actionPerformed(ActionEvent arg0) {
-        switch (arg0.getActionCommand()) {
-            case "enQueueButton":
-                //this.handleEnQueue();
-                System.out.println("enqueue button pressed");
+        System.out.println("Action Received");
+        System.out.println(arg0.getActionCommand());
+        Object queueInput = this.userInterface.getCentralPanel().getQueuePanel().getUserInput().getText();
+        
+        switch(arg0.getActionCommand()) {
+            case " Enqueue ":
+                handleQueueEnqueue(queueInput);
                 break;
-            case "deQueueButton":
-                //this.handleDeQueue();
-                System.out.println("enqueue button pressed");
+            case " Dequeue ":
+                handleQueueDequeue();
                 break;
         }
-        
-        System.out.println("button clicked");
     }
     
-    public void handleEnQueue() {
-        /*
-        int newNumber = this.userInterface.centralPanel.userInput.getText().;
-        this.circularQueue.enqueue(new newNumber);
-        int[] actualizedArray = this.circularQueue.getInnerArray();
-        this.userInterface.centralPanel.arrayPanel.actualizeArray(actualizedArray);
-        */
+    public void handleQueueEnqueue(Object queueInput) {
+        System.out.println(queueInput);
+        if (this.circularQueue.isFull()) {
+            System.out.println("full");
+            boundsLimitException("Full");
+        } else {
+            this.circularQueue.enQueue(queueInput);
+            Object[] sequence = this.circularQueue.getInnerArray();
+            this.userInterface.actualizeCentralPanel(sequence);
+        }
     }
     
-    public void handleDeQueue() {
-        /*
-        int deQueued = this.circularQueue.deQueue();
-        int[] actualizedArray = this.circularQueue.getInnerArray();
-        this.userInterface.centralPanel.arrayPanel.actualizeArray(actualizedArray);
-        */
+    public void handleQueueDequeue() {
+        System.out.println("4");
+        if (this.circularQueue.isEmpty()) {
+            System.out.println("empty");
+            boundsLimitException("Empty");
+        } else {
+            this.circularQueue.deQueue();
+            Object[] sequence = this.circularQueue.getInnerArray();
+            this.userInterface.actualizeCentralPanel(sequence);
+        }
+    }
+    
+    public void boundsLimitException(String state) {
+        this.userInterface.actualizeCentralPanel(state);
     }
 }
